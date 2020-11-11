@@ -1,21 +1,38 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { Button, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
+const App = () => {
+
+  const [value, setValue] = useState(0);
+
+  const addValue = () => {
+    if (value < 10) {
+      setValue(value => value + 1)
+    } else if (value == 10) {
+      setValue(value => value = 0)
+    }
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView>
+      <View style={styles.container}>
+        <Text style={styles.title}>Test</Text>
+        <Text>{value}</Text>
+        <Button title="Add" onPress={addValue}></Button>
+      </View>
+    </SafeAreaView>
+
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
   },
+  title: {
+    fontSize: 40,
+  }
 });
+
+export default App;
