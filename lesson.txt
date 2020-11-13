@@ -1,0 +1,13 @@
+SCROLLVIEW LIST
+<ScrollView style={styles.todoList}>
+    {array.map(todo => (<Todo title={todo}></Todo>))}
+</ScrollView>
+
+METHOD
+const addTodo = () => {
+    setTodos([input, ...todos]);
+    setInput('');
+    }
+
+NPM PACKAGES LIBRARY
+https://www.npmjs.com/
