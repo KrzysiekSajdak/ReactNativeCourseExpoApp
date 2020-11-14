@@ -11,3 +11,6 @@ const addTodo = () => {
 
 NPM PACKAGES LIBRARY
 https://www.npmjs.com/
+npm install
+npm start
+expo init project_name
